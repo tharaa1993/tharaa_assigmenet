@@ -1,0 +1,80 @@
+- To Get All users:
+Url:	http://localhost/full_api/users/
+Method: GET
+
+- To Search for Specifc use name
+Url:	http://localhost/full_api/users/search/Tharaa
+Method:	GET
+
+- To Get Specific User by user id
+Url:	http://localhost/full_api/users/1
+Method:	GET
+
+
+- To create new user:
+http:	//localhost/full_api/users
+method:	POST
+data :
+{"name":"Tharaa Ashour","email":"tharaa_1993@yahoo.com","password":"Tharaa123","role":"user"}
+
+- To Update Existing User:
+Url:	//localhost/full_api/users/1
+Method:	PUT
+data: {"name":"Tharaa Ashour","role":"user","email":"tharaa_18885@gmail.com"}
+
+- To Delete Existing User using Id:
+Url:	http://localhost/full_api/users/1
+Method:	DELETE
+
+- User Login:
+URL:	http://localhost/full_api/users/login
+METHOD:	POST
+data: {"email":"tharaa_19932@gmail.com","password":"Tharaa123"}
+
+****************************************************************
+ - To Create a Car Maker:
+URL:	http://localhost/full_api/car_maker
+Method:	POST
+Data:	{"maker_name":"Toyota","country":"Japan"}
+
+*******************************************
+
+
+****************************************************************
+ - To GET ALL Car Maker:
+URL:	http://localhost/full_api/posts/car_maker
+Method:	POST
+Data:	{"maker_name":"Toyota","country":"Japan"}
+
+*******************************************
+- to publish a post :
+URL:	http://localhost/full_api/posts/publish/1
+Method: POST
+data:	{"is_published":"1"}
+------------------------------------
+
+- To Create New posts:
+Url:	http://localhost/full_api/posts
+Method:	Post
+data:
+{"title":"Pruis Car Full Options !!! ","description":"In February 2011, Toyota asked the public to decide on what the most proper plural form of Prius should be, with choices including Prien, Prii, Prium, Prius, or Priuses","user_id":"11111","car_maker":"1","picture":"","extra":"{\"color\":\"blue\",\"is_manual\":\"0\",\"price\":\"10000\"}"}
+OR (without pass picture)
+{"title":"Pruis Car Full Options !!! ","description":"In February 2011, Toyota asked the public to decide on what the most proper plural form of Prius should be, with choices including Prien, Prii, Prium, Prius, or Priuses. The company said it would use the most popular choice in its advertising and on 20 February announced that Prii was the most popular choice, and the new official plural designation.In Latin prius is the neuter singular of the comparative form (prior, prior, prius) of an adjective with only comparative and superlative (the superlative being primus, prima, primum). Consequently, like all third declension words, the plural in Latin was priora (cf. Latin declension) which was used by the Lada Priora in 2007.","user_id":"11111","car_maker":"1","extra":"{\"color\":\"blue\",\"is_manual\":\"0\",\"price\":\"10000\"}"}
+
+----------------------------------
+* TO get all PUBLISHED posts created by user_id
+URL:	http://localhost/full_api/posts/11111
+METHOD:	POST
+---------------------------------------
+* To get all published posts using car_maker id
+Url:	http://localhost/full_api/posts/car_maker/1
+Method:	GET
+Note:	to return xml data (The content-type should be application/xml) otherwise, the system will return json 
+
+--------------------------------------------
+* To search by specific item in extra field
+URL:	http://localhost/full_api/posts/extra/{FIELD_NAME,FIELD_VALUE}
+	Ex.	http://localhost/full_api/posts/extra/price,10000
+		http://localhost/full_api/posts/extra/color,blue
+		http://localhost/full_api/posts/extra/is_manual,0
+Method:	GET
